@@ -129,7 +129,7 @@ mongoose.connection.on('disconnected', () => {
     } else {
         console.log(data)
     }
-}) */
+}); */
 
 /////////////////////////////////////////////////
 // ### Select by exists or does not exist
@@ -163,11 +163,42 @@ mongoose.connection.on('disconnected', () => {
     } else {
         console.log(data)
     }
-}) */
+}); */
 
 /////////////////////////////////////////////////
 // ### Select with OR
 
+/* db.find({ $or: [{location: "New York, New York, US"}, {location: "New Orleans, Louisiana, US"}]}, (err, data) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log(data)
+    }
+}); */
+
+/* db.find({ $or: [{loves: "brooding"}, {loves: "being tragic"}]}, (err, data) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log(data)
+    }
+}); */
+
+/* db.find({ $or: [{victims: {$gt: 1000 }}, {loves: "marshmallows"}]}, (err, data) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log(data)
+    }
+}); */
+
+/* db.find({ $or: [{hair_color: "red"}, {eye_color: "green"}]}, (err, data) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log(data)
+    }
+}) */
 /////////////////////////////////////////////////
 //### Select objects that match one of several values
 
