@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const Vampire = require('../vampire_app/models/vampire');
+const Vampire = require('../vampire_app/models/Vampire');
 
 describe('Vampire schema', function() {
     it('should work as expected with good inputs', function(done){

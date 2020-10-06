@@ -4,6 +4,11 @@ const mongoose = require('mongoose');
 const connectionString = 'mongodb://localhost:27017/mongoose-vampires';
 
 // 3. Require your extra data source
+const db = require('./models/Vampire');
+console.log(db);
+const vampires = require('../populateVampires.js');
+
+// 4. Connect your database
 mongoose.connect(connectionString, { 
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
@@ -22,9 +27,6 @@ mongoose.connection.on('disconnected', () => {
     console.log('Mongoose disconnected');
 });
 
-// 4. Connect your database
-const db = require('./models/vampire.js');
-const vampires = require('../populateVampires.js');
 
 /////////////////////////////////////////////////
 //Write your answers to add, query, update, remove, and Hungry for More below.
@@ -51,12 +53,7 @@ const vampires = require('../populateVampires.js');
     location: 'Eagle River, Minnesota, US',
     gender: 'f',
     victims: 1
-  }, (err, data) => {
-      if (err) console.log(err);
-      console.log(data);
-      mongoose.connection.close();
-  }) */
-/*   db.create({
+  },{
     name: 'Lilu',
     hair_color: 'black',
     eye_color: 'grey',
@@ -90,11 +87,57 @@ const vampires = require('../populateVampires.js');
   }); */
 /////////////////////////////////////////////////
 // ## QUERYING
+
+/* db.find({gender: "f"}, (err, data) => {
+    if (err) {
+        console.log(err)
+    }
+    else {
+        console.log(data)
+    }
+}); */
+
+/* db.find({victims:{$gt: 500 }}, (err, data) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log(data)
+    }
+}); */
+
+/* db.find({victims:{$lte: 150}}, (err, data) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log(data)
+    }
+}); */
+
+/* db.find({victims:{$ne: 210234}}, (err, data) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log(data)
+    }
+}); */
+
+/* db.find({ $and: [{victims:{$gt: 150}}, {victims: {$lt: 500}}]}, (err, data) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log(data)
+    }
+}) */
+
 /////////////////////////////////////////////////
 // ### Select by comparison
 
+db.find({})
+
+
 /////////////////////////////////////////////////
 // ### Select by exists or does not exist
+
 
 /////////////////////////////////////////////////
 // ### Select with OR
@@ -121,10 +164,14 @@ const vampires = require('../populateVampires.js');
 /////////////////////////////////////////////////
 
 // ## HUNGRY FOR MORE
-/////////////////////////////////////////////////
+/////////////////////////////////////////////////                 
 //## Select objects that match one of several values
 
 /////////////////////////////////////////////////
 //## Negative Selection
 
 /////////////////////////////////////////////////
+
+module.exports = {
+    Vampire: require('./models/Vampire')
+};

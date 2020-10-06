@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const articleSchema = new Schema({
+const vampireSchema = new Schema({
     name: {type: String, required: true, unique: true},
     hair_color: {type: String, default: 'blonde'},
     eye_color: {type: String},
@@ -12,6 +12,6 @@ const articleSchema = new Schema({
     victims: {type: Number, min:1},
 });
 
-const Article = mongoose.model('Article', articleSchema);
+const Vampire = mongoose.model('Vampire', vampireSchema);
 
-module.exports = Article;
+module.exports = Vampire;
