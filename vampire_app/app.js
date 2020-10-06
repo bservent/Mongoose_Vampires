@@ -87,6 +87,8 @@ mongoose.connection.on('disconnected', () => {
   }); */
 /////////////////////////////////////////////////
 // ## QUERYING
+/////////////////////////////////////////////////
+// ### Select by comparison
 
 /* db.find({gender: "f"}, (err, data) => {
     if (err) {
@@ -130,14 +132,38 @@ mongoose.connection.on('disconnected', () => {
 }) */
 
 /////////////////////////////////////////////////
-// ### Select by comparison
-
-db.find({})
-
-
-/////////////////////////////////////////////////
 // ### Select by exists or does not exist
+/* db.find({title: {$exists: true}}, (err, data) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log(data)
+    }
+}); */
 
+/* db.find({victims: {$exists: false}}, (err, data) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log(data)
+    }
+}); */
+
+/* db.find({ $and: [{title:{$exists: true}}, {victims:{$exists: false}}]}, (err, data) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log(data)
+    }
+}); */
+
+/* db.find({ $and: [{victims: {$exists: true}}, {victims: {$gt: 1000}}]}, (err, data) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log(data)
+    }
+}) */
 
 /////////////////////////////////////////////////
 // ### Select with OR
