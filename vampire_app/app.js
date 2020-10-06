@@ -1,10 +1,30 @@
 // 1. Require Mongoose
-
+const mongoose = require('mongoose');
 // 2. Require your Model
+const connectionString = 'mongodb://localhost:27017/mongoose-vampires';
 
 // 3. Require your extra data source
+mongoose.connect(connectionString, { 
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
+	useCreateIndex: true,
+	useFindAndModify: false,
+});
+mongoose.connection.on('connected', () => {
+    console.log(`Mongoose connected to ${connectionString}`);
+});
+
+mongoose.connection.on('error', (err) => {
+    console.log(`Mongoose connected error ${err}`);
+});
+
+mongoose.connection.on('disconnected', () => {
+    console.log('Mongoose disconnected');
+});
 
 // 4. Connect your database
+const db = require('./models/vampire.js');
+//'../vampire_app/models/vampire
 
 /////////////////////////////////////////////////
 //Write your answers to add, query, update, remove, and Hungry for More below.
