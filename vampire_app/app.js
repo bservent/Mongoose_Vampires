@@ -199,8 +199,42 @@ mongoose.connection.on('disconnected', () => {
         console.log(data)
     }
 }) */
+
 /////////////////////////////////////////////////
 //### Select objects that match one of several values
+
+/* db.find({ $or: [{loves: "frilly shirtsleeves"}, {loves: "frilly collars"}]}, (err, data) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log(data)
+    }
+}); */
+
+/* db.find({ loves : 'brooding'}, (err, data) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log(data)
+    }
+}); */
+
+/* db.find({ $or: [{loves: "fancy cloaks"}, {loves: "frilly shirtsleeves"}, 
+{loves: "appearing innocent"}, {loves: "being tragic"}, {loves: "brooding"}]}, (err, data) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log(data)
+    }
+});  */
+
+/* db.find({ $and: [{loves : 'fancy cloaks'}, {loves : {$nin : ["top hats", "virgin blood"]}}]}, (err, data) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log(data)
+    }
+}); */
 
 /////////////////////////////////////////////////
 //### Negative Selection
