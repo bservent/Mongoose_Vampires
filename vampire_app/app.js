@@ -220,7 +220,8 @@ mongoose.connection.on('disconnected', () => {
 }); */
 
 /* db.find({ $or: [{loves: "fancy cloaks"}, {loves: "frilly shirtsleeves"}, 
-{loves: "appearing innocent"}, {loves: "being tragic"}, {loves: "brooding"}]}, (err, data) => {
+{loves: "appearing innocent"}, {loves: "trickery"}, {loves: "lurking in rotting mansions"},
+{loves: "R&B music"}]}, (err, data) => {
     if (err) {
         console.log(err)
     } else {
@@ -239,13 +240,63 @@ mongoose.connection.on('disconnected', () => {
 /////////////////////////////////////////////////
 //### Negative Selection
 
+/* db.find({ $and: [{loves : 'ribbons'}, {eye_color: {$nin: ["brown"]}}]}, (err, data) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log(data)
+    }
+}); */
+
+/* db.find({ location : {$nin: ["Rome"]}}, (err, data) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log(data)
+    }
+}); */
+
+/* db.find({ loves : {$nin: ['brooding', "fancy cloaks", "frilly shirtsleeves",
+"appearing innocent", "being tragic"]}}, (err, data) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log(data)
+    }
+}); */
+
+/* db.find({ victims: {$lte: 200}}, (err, data) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log(data)
+    }
+}); */
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REPLACE
+/* db.find({ name: "Claudia"}, (err, data) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log(data)
+    }
+}) */
+
+/* db.findByIdAndUpdate(
+    '5f7cef59cfead1dca652ec46',
+    { $set: { name: 'Eve'} },
+    { new: true },
+    (err, data) => 
+    {
+        console.log(data);
+    }); */
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## UPDATE
+
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
