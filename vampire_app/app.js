@@ -280,15 +280,18 @@ mongoose.connection.on('disconnected', () => {
     } else {
         console.log(data)
     }
-}) */
+}); */
 
 /* db.findByIdAndUpdate(
     '5f7cef59cfead1dca652ec46',
     { $set: { name: 'Eve'} },
     { new: true },
-    (err, data) => 
-    {
-        console.log(data);
+    (err, data) => {
+        if(err) {
+            console.log(err);
+        }else {
+            console.log(data);
+        }
     }); */
 
 /////////////////////////////////////////////////
@@ -299,32 +302,60 @@ mongoose.connection.on('disconnected', () => {
     { name: 'Eve'},
     { $set: { gender: 'm'} },
     { new: true},
-    (err, data) => 
-    {
-        console.log(data);
+    (err, data) => {
+        if(err) {
+            console.log(err);
+        }else {
+            console.log(data);
+        }
     }); */
 
 /* db.findByIdAndUpdate(
     '5f7cef59cfead1dca652ec46',
     { $set: { name: 'moniker'} },
     { new: true },
-    (err, data) => 
-    {
-        console.log(data);
+   (err, data) => {
+        if(err) {
+            console.log(err);
+        }else {
+            console.log(data);
+        }
     }); */
 
 /*     db.updateMany(
         { gender: 'f'},
         { gender: 'fems'},
-        (err, data) => 
-        {
+        (err, data) => {
+        if(err) {
+            console.log(err);
+        }else {
             console.log(data);
-        }); */
+        }
+    }); */
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REMOVE
 
+/* db.deleteOne(
+    { hair_color: 'brown'},
+    (err, data) => {
+        if(err) {
+            console.log(err);
+        }else {
+            console.log(data);
+        }
+    }); */
+
+/* db.deleteMany(
+    { eye_color: 'blue'},
+    (err, data) => {
+        if(err) {
+            console.log(err);
+        }else {
+            console.log(data);
+        }
+    }); */
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 
