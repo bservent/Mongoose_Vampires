@@ -34,9 +34,7 @@ mongoose.connection.on('disconnected', () => {
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 //check to see whats in database
-/* db.find({}, (err, data) => {
-    console.log(data);
-}); */
+/* */
 // INSERT USING MONGOOSE
 // ### Add the vampire data that we gave you
 /* db.insertMany(vampires, (err, data) => {
@@ -297,6 +295,31 @@ mongoose.connection.on('disconnected', () => {
 /////////////////////////////////////////////////
 // ## UPDATE
 
+/* db.findOneAndUpdate(
+    { name: 'Eve'},
+    { $set: { gender: 'm'} },
+    { new: true},
+    (err, data) => 
+    {
+        console.log(data);
+    }); */
+
+/* db.findByIdAndUpdate(
+    '5f7cef59cfead1dca652ec46',
+    { $set: { name: 'moniker'} },
+    { new: true },
+    (err, data) => 
+    {
+        console.log(data);
+    }); */
+
+/*     db.updateMany(
+        { gender: 'f'},
+        { gender: 'fems'},
+        (err, data) => 
+        {
+            console.log(data);
+        }); */
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
