@@ -83,6 +83,22 @@ mongoose.connection.on('disconnected', () => {
       console.log(data);
       mongoose.connection.close();
   }); */
+
+//adding Claudia back
+/* db.create({
+    name:'Claudia',
+    dob: new Date(1793, 2, 7, 8, 30),
+    hair_color: 'blonde',
+    eye_color: 'blue',
+    loves: ['doll babies', 'ribbons', 'appearing innocent', '  trickery'],
+    location: 'New Orleans, Louisiana, US',
+    gender: 'f',
+    victims: 290
+  }, (err, data) => {
+    if (err) console.log(err);
+    console.log(data);
+    mongoose.connection.close();
+}); */
 /////////////////////////////////////////////////
 // ## QUERYING
 /////////////////////////////////////////////////
@@ -274,16 +290,8 @@ mongoose.connection.on('disconnected', () => {
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REPLACE
-/* db.find({ name: "Claudia"}, (err, data) => {
-    if (err) {
-        console.log(err)
-    } else {
-        console.log(data)
-    }
-}); */
 
-/* db.findByIdAndUpdate(
-    '5f7cef59cfead1dca652ec46',
+/* db.findOneAndUpdate({ name: "Claudia"},
     { $set: { name: 'Eve'} },
     { new: true },
     (err, data) => {
@@ -292,7 +300,7 @@ mongoose.connection.on('disconnected', () => {
         }else {
             console.log(data);
         }
-    }); */
+    });  */
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -310,8 +318,8 @@ mongoose.connection.on('disconnected', () => {
         }
     }); */
 
-/* db.findByIdAndUpdate(
-    '5f7cef59cfead1dca652ec46',
+/* db.findOneAndUpdate(
+    { name: 'Eve'},
     { $set: { name: 'moniker'} },
     { new: true },
    (err, data) => {
